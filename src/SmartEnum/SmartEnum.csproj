@@ -40,9 +40,17 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\SmartEnum.SourceGeneration\SmartEnum.SourceGeneration.csproj" PrivateAssets="all" ReferenceOutputAssembly="true" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Properties\PublishProfiles\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="icon.png" Pack="true" Visible="false" PackagePath="" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <None Include="$(OutputPath)\netstandard2.0\SmartEnum.SourceGeneration.dll" Pack="true" PackagePath="analyzers\dotnet\cs" Visible="false" />
   </ItemGroup>
 </Project>

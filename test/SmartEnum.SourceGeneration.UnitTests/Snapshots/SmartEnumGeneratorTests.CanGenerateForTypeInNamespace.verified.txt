@@ -1,0 +1,24 @@
+﻿// HintName: Some.Name.Space.TestEnum.SmartEnum.g.cs
+using System.Collections.Generic;
+using Ardalis.SmartEnum;
+
+namespace Some.Name.Space
+{
+    public partial class TestEnum : SmartEnum<TestEnum>
+    {
+        private static readonly IReadOnlyCollection<TestEnum> _allMembers;
+        static TestEnum()
+        {
+            One = new TestEnum(nameof(One), 0);
+            Two = new TestEnum(nameof(Two), 1);
+            Three = new TestEnum(nameof(Three), 2);
+            _allMembers = new[]{One, Two, Three};
+        }
+
+        private TestEnum(string name, int value) : base(name, value)
+        {
+        }
+
+        public static IReadOnlyCollection<TestEnum> GetAllMembers() => _allMembers;
+    }
+}
